@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    <properties resource="database.properties"/>-->
+
+<!--    <settings>-->
+<!--        &lt;!&ndash; 全局配置设置 &ndash;&gt;-->
+<!--        <setting name="cacheEnabled" value="true"/>-->
+<!--        <setting name="lazyLoadingEnabled" value="true"/>-->
+<!--        &lt;!&ndash; 其他配置 &ndash;&gt;-->
+<!--    </settings>-->
+
+<!--    <typeAliases>-->
+<!--        &lt;!&ndash; 为 java 类型命名 &ndash;&gt;-->
+<!--        <typeAlias alias="User" type="com.example.User"/>-->
+<!--        &lt;!&ndash; 其他别名 &ndash;&gt;-->
+<!--    </typeAliases>-->
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.60.133:3306/test"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+        <!-- 可以配置多个环境 -->
+    </environments>
+
+    <mappers>
+        <!-- 指定映射文件或接口 -->
+<!--        <mapper resource="com/example/UserMapper.xml"/>-->
+        <!-- 或者直接指定接口，MyBatis会自动查找同名的Mapper.xml -->
+<!--         <mapper class="org.shitj.mapper.*"/>-->
+    </mappers>
+</configuration>
